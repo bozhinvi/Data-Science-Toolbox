@@ -1,0 +1,15 @@
+# Data Science Core Libraries
+pandas==2.1.3
+numpy==1.25.2
+seaborn==0.13.0
+matplotlib==3.8.2
+scikit-learn==1.3.2
+pydotplus==2.0.2
+graphviz==0.20.1
+
+# Jupyter and Extensions
+jupyter==1.0.0
+jupyterlab==4.0.8
+ipywidgets==8.1.1
+jupyter-dash==0.4.2
+ipykernel==6.25.2
