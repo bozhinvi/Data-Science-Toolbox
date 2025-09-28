@@ -1,5 +1,6 @@
 # Data Science Toolbox
-This is a repository based on a summer school course I took in 2017 at the Barcelona School of Economics. I updated the code (but stikll working on it) and created a container which can be build using docker built command. The container can be used to play around with the code. Have in mind that all changes are not persistent on your local hard drive because the directory is not mounted but copied during docker build.
+
+This is a repository based on a summer school course I took in 2017 at the Barcelona School of Economics. I updated the code (but stikll working on it) and created a container which can be build using docker built command (see Using Docker)
 
 ## Topics covered
 
@@ -7,11 +8,17 @@ Part 1 covers a simple Python introiduction as well as typical examples of class
 
 Part 2 was more exciting since we proceeded with Keras and TensowFlow and trained neural networks. I will publish it after I cleaned up the code which is from 2017 and has to undergo some serious updates due to depreciated packages.
 
-## Using Docker to play around
+## Using Docker
 
-If you like to play around with code without having to install any packages, you can use Docker to do so. Just start Docker and built the image and start it using the following code:
+If you like to play around with code without having to install any packages, you can use Docker to do so. 
+
+
+Just start Docker and built the image and start it using the following code
 
 `docker build -t data_science_toolbox:0.1 .`
 
 `docker run -d --name ds-toolbox -p 8888:8888 data_science_toolbox:0.1`
 
+The container can be used to play around with the code. Have in mind that all changes are not persistent on your local hard drive because the directory is not mounted but copied during docker build. If you like to use the container as development environment, you have to mount your directories to the container using the following code:
+
+`docker run -d --name ds-toolbox -p 8888:8888 -v "./notebooks:/workspace/notebooks" -v "./data:/workspace/data" data_science_toolbox:0.1`
